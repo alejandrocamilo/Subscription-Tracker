@@ -4,7 +4,7 @@ import {
     createSubscription,
     getAllSubscriptions, getSubscription,
     getUserSubscriptions
-} from "../controllers/susbscription.controller.js";
+} from "../controllers/subscription.controller.js";
 
 const subscriptionRouter = Router();
 

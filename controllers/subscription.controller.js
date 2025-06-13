@@ -1,16 +1,31 @@
 import SubscriptionModel from "../models/subscription.model.js";
-import subscriptionModel from "../models/subscription.model.js";
+import {workflowClient} from "../config/upstash.js";
+import {SERVER_URL} from "../config/env.js";
 
 export const createSubscription = async (req, res, next) => {
     try {
-        const subscription = await SubscriptionModel.create({...req.body, user: req.user._id});
+        const subscription = await SubscriptionModel.create({
+            ... req.body,
+            user: req.user._id,});
 
-        res.status(201).json({success: true, message: 'Subscription successfully created', data: subscription});
+        const { workflowRunId } = await workflowClient.trigger({
+            url: `${SERVER_URL}/api/v1/workflows/subscription/reminder`,
+            body: {
+                subscriptionId: subscription.id,
+            },
+            headers: {
+                'content-type': 'application/json',
+            },
+            retries: 0,
+        })
+        res.status(201).json({success: true, message: 'Subscription successfully created',data: { subscription, workflowRunId }});
     }
     catch (error) {
         next(error);
     }
 }
+
+
 
 
 export const getUserSubscriptions = async (req, res, next) => {
@@ -22,7 +37,7 @@ export const getUserSubscriptions = async (req, res, next) => {
             throw error;
         }
 
-        const userSubscriptions = await subscriptionModel.find({user: req.params.id});
+        const userSubscriptions = await SubscriptionModel.find({user: req.params.id});
 
         res.status(200).json({success: true, data: userSubscriptions});
 
@@ -35,7 +50,7 @@ export const getUserSubscriptions = async (req, res, next) => {
 
 export const getAllSubscriptions = async (req, res, next) => {
     try{
-        const subscriptions = await subscriptionModel.find();
+        const subscriptions = await SubscriptionModel.find();
         res.status(200).json({success: true, data: subscriptions});
 
     }
@@ -48,7 +63,7 @@ export const getSubscription = async (req, res, next) => {
 
     try {
 
-        const subscription = await subscriptionModel.findById(req.params.id)
+        const subscription = await SubscriptionModel.findById(req.params.id)
 
         res.status(200).json({success: true, data: subscription});
     }
