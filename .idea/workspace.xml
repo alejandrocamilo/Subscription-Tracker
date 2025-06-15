@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50d37878-88e4-405b-88b2-6e1c47c9204d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/upstash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/workflow.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/workflow.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/email-template.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/send-email.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/susbscription.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/subscription.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/nodemailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/nodemailer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/subscription.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/subscription.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/workflow.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/workflow.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/subscription.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/subscription.routes.js" afterDir="false" />
@@ -85,7 +83,7 @@
       <workItem from="1748744602730" duration="14509000" />
       <workItem from="1748886807751" duration="57173000" />
       <workItem from="1749686443516" duration="3921000" />
-      <workItem from="1749828773662" duration="13614000" />
+      <workItem from="1749828773662" duration="31857000" />
     </task>
     <servers />
   </component>
